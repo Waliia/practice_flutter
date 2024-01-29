@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 class MyList extends StatefulWidget {
   const MyList({super.key});
@@ -8,10 +9,10 @@ class MyList extends StatefulWidget {
 }
 
 class _MyListState extends State<MyList> {
-  List<String> quotes = [
-    'Nobady KNowns what to do with this list',
-    'Take me Home where I belong',
-    'I cant take it anymore'
+  List<Quote> quotes = [
+    Quote(author: 'Wilson', text: 'Woh muhbat hyy kya jo chor dye'),
+    Quote(author: 'John', text: 'Woh muhbat hy'),
+    Quote(author: 'Talha', text: 'Tu dakh lye meri tarf sahaba'),
   ];
 
   @override
@@ -24,7 +25,9 @@ class _MyListState extends State<MyList> {
         backgroundColor: Colors.amber.shade700,
       ),
       body: Column(
-        children: quotes.map((data) => Text(data)).toList(),
+        children: quotes
+            .map((data) => Text('${data.author} - ${data.text}'))
+            .toList(),
       ),
     );
   }
